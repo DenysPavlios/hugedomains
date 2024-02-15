@@ -4,7 +4,6 @@ import pytest
 from playwright.sync_api import sync_playwright, Page, expect
 from pages.home_page import HomePage
 
-@pytest.mark.skip
 def test_search_query(page: Page):
 
     search = "DroneTe"
