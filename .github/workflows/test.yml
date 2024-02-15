@@ -29,5 +29,5 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m
+          cd tests
           pytest -v
