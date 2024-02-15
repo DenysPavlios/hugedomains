@@ -28,4 +28,5 @@ jobs:
 
       - name: Run tests
         run: |
+          print(f'{pwd}')
           pytest -v
