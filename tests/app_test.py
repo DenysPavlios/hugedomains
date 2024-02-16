@@ -6,14 +6,20 @@ import pytest
 my_acc = 'https://www.hugedomains.com/payment-plan-login.cfm'
 
 @pytest.fixture
-def playwright_page_index(page):
-    page.goto("https://www.hugedomains.com/index.cfm")
-    print(f'test # 1 ')
-    return page
+def playwright_page_index():
+    with sync_playwright() as p:
+        browser = p.firefox.launch()
+        page = browser.new_page()
+        page.goto("https://www.hugedomains.com/index.cfm")
+        yield page
+        browser.close()
+        print(f'test # 1 ')
+
 
 
 
 def test_assert(playwright_page_index):
+    page = playwright_page_index
     print(f'test # 2 ')
     link = playwright_page_index.locator("#header").get_by_role("link", name="Home")
     assert link.is_visible()
