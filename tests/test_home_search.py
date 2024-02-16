@@ -1,9 +1,11 @@
 import time
 from pages.home_page import HomePage
+from playwright.sync_api import sync_playwright, Page
+
 import pytest
-@pytest.fixture
-def page():
-    yield
+# @pytest.fixture
+# def page():
+#     yield
 
 
 def test_search_query(page):
