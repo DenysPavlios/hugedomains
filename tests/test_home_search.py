@@ -1,8 +1,4 @@
 import time
-import sys
-
-from pages.home_page import HomePage
-
 import pytest
 from playwright.sync_api import sync_playwright, Page, expect
 from pages.home_page import HomePage
