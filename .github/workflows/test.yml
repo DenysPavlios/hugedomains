@@ -11,12 +11,16 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2  # Шаг для клонирования репозитория
+      uses: actions/checkout@v3  # Шаг для клонирования репозитория
 
     - name: Set up Python
-      uses: actions/setup-python@v2  # Установка Python
+      uses: actions/setup-python@v3  # Установка Python
       with:
         python-version: 3.12  # Версия Python, которую вы хотите использовать
+    - name: Install Playwright
+      run: |
+        pip install playwright
+        playwright install
 
     - name: Install dependencies
       run: |
