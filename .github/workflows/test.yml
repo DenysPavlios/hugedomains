@@ -30,4 +30,5 @@ jobs:
       - name: Run tests
         run: |
           cd tests
+          headless: True
           pytest -v app_test.py
