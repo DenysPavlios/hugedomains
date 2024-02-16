@@ -2,6 +2,8 @@ name: Run Tests on Git Push
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   test:
@@ -22,4 +24,4 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest ./path/to/tests/test_home_search.py
+        pytest tests/
