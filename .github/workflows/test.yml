@@ -1,35 +1,25 @@
-name: Run tests
+name: Run Tests on Git Push
 
 on:
   push:
+
 jobs:
   test:
-    runs-on: ubuntu-latest  # Определение операционной системы, на которой будет запущена задача
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3  # Шаг для клонирования репозитория
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v4  # Установка Python
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.12  # Версия Python, которую вы хотите использовать
-
-    - name: Install Playwright
-      run: |
-        pip install playwright
-        playwright install
-
-    - name: Install Firefox
-      run: |
-        sudo apt update
-        sudo apt install firefox -y
+        python-version: '3.12'  # Укажите требуемую версию Python
 
     - name: Install dependencies
       run: |
-        pip install pytest
-        python -m pip install --upgrade pip
+        pip install playwright pytest
 
     - name: Run tests
       run: |
-        pytest
+        pytest ./path/to/tests/test_home_search.py
