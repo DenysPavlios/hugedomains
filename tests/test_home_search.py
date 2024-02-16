@@ -1,5 +1,9 @@
 import time
 from pages.home_page import HomePage
+import pytest
+@pytest.fixture
+def page():
+    yield
 
 
 def test_search_query(page):
