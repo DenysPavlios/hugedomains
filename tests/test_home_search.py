@@ -1,4 +1,7 @@
 import time
+import sys
+
+from pages.home_page import HomePage
 
 import pytest
 from playwright.sync_api import sync_playwright, Page, expect
@@ -12,5 +15,4 @@ def test_search_query(page: Page):
     time.sleep(5)
     search_home.wait_locator()
     search_home.result_search()
-
 

@@ -1,9 +1,11 @@
 from playwright.sync_api import sync_playwright, Page
+from pages.home_page import HomePage
+
 import pytest
 
 my_acc = 'https://www.hugedomains.com/payment-plan-login.cfm'
 
-@pytest.fixture(scope="function")
+@pytest.fixture
 def playwright_page_index(page: Page):
     page.goto("https://www.hugedomains.com/index.cfm")
     print(f'test # 1 ')
