@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v3  # Шаг для клонирования репозитория
 
     - name: Set up Python
-      uses: actions/setup-python@v3  # Установка Python
+      uses: actions/setup-python@v4  # Установка Python
       with:
         python-version: 3.12  # Версия Python, которую вы хотите использовать
     - name: Install Playwright
