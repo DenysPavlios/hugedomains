@@ -11,8 +11,8 @@ def playwright_page_index():
         page = browser.new_page()
         page.goto("https://www.hugedomains.com/index.cfm")
         yield page
+        page.close()
         browser.close()
-        print(f'test # 1 ')
 
 def test_assert(playwright_page_index):
     page = playwright_page_index
