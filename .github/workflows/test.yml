@@ -2,9 +2,6 @@ name: Run tests
 
 on:
   push:
-#    branches:
-#      - main  # Название вашей основной ветки
-
 jobs:
   test:
     runs-on: ubuntu-latest  # Определение операционной системы, на которой будет запущена задача
@@ -17,10 +14,16 @@ jobs:
       uses: actions/setup-python@v4  # Установка Python
       with:
         python-version: 3.12  # Версия Python, которую вы хотите использовать
+
     - name: Install Playwright
       run: |
         pip install playwright
         playwright install
+
+    - name: Install Firefox
+      run: |
+        sudo apt update
+        sudo apt install firefox -y
 
     - name: Install dependencies
       run: |
