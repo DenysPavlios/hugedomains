@@ -5,8 +5,7 @@ from playwright.sync_api import sync_playwright, Page
 
 
 
-def test_search_query(playwright_page_index):
-    page = playwright_page_index
+def test_search_query(page:Page):
     search = "DroneTe"
     search_home = HomePage(page)
     search_home.fill_input__btn_click_for_search(search)

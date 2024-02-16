@@ -15,14 +15,12 @@ def playwright_page_index():
         browser.close()
 
 def test_assert(playwright_page_index):
-    page = playwright_page_index
     print(f'test # 2 ')
     link = playwright_page_index.locator("#header").get_by_role("link", name="Home")
     assert link.is_visible()
 
 
 def test_click_link(playwright_page_index):
-    page = playwright_page_index
     print(f'test # 3 ')
     link = playwright_page_index.locator("#header").get_by_role("link", name="My account")
     link.click()
