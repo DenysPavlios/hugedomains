@@ -23,7 +23,7 @@ jobs:
 
 
       - name: Ensure browsers are installed
-        run: python -m playwright install
+        run: python -m playwright install firefox
 
       - name: Run tests
         run: |
