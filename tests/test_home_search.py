@@ -1,14 +1,12 @@
 import time
 from pages.home_page import HomePage
+import pytest
 from playwright.sync_api import sync_playwright, Page
 
-import pytest
-# @pytest.fixture
-# def page():
-#     yield
 
 
-def test_search_query(page):
+def test_search_query(playwright_page_index):
+    page = playwright_page_index
     search = "DroneTe"
     search_home = HomePage(page)
     search_home.fill_input__btn_click_for_search(search)

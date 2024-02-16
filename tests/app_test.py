@@ -1,6 +1,5 @@
 from playwright.sync_api import sync_playwright, Page
 from pages.home_page import HomePage
-
 import pytest
 
 my_acc = 'https://www.hugedomains.com/payment-plan-login.cfm'
@@ -15,9 +14,6 @@ def playwright_page_index():
         browser.close()
         print(f'test # 1 ')
 
-
-
-
 def test_assert(playwright_page_index):
     page = playwright_page_index
     print(f'test # 2 ')
@@ -26,6 +22,7 @@ def test_assert(playwright_page_index):
 
 
 def test_click_link(playwright_page_index):
+    page = playwright_page_index
     print(f'test # 3 ')
     link = playwright_page_index.locator("#header").get_by_role("link", name="My account")
     link.click()
