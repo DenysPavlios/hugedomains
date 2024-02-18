@@ -6,7 +6,7 @@ from playwright.sync_api import sync_playwright, Page
 @pytest.fixture
 def page():
     with sync_playwright() as p:
-        browser = p.firefox.launch()
+        browser = p.firefox.launch(headless=True)
         page = browser.new_page()
         yield page
         page.close()
