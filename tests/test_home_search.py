@@ -18,5 +18,4 @@ def test_search_query(page):
     search_home = HomePage(page)
     search_home.wait_locator()
     search_home.fill_input__btn_click_for_search(search)
-    search_home.only_click_on_search()
     search_home.result_search()
