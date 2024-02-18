@@ -16,9 +16,9 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.12'  # Укажите требуемую версию Python
+        python-version: '3.12'  # version Python
 
-    # Установка Xvfb
+    # setup server for brawser Xvfb
     - name: Install Xvfb
       run: sudo apt update && sudo apt install xvfb x11-utils
 
@@ -29,7 +29,7 @@ jobs:
         python -m pip install playwright
         playwright install
 
-    # Запуск тестов с использованием Xvfb
+    # run pytest with server Xvfb
     - name: Run tests
       run: |
         xvfb-run pytest -v tests/
