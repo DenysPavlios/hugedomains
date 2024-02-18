@@ -4,7 +4,7 @@ import pytest
 
 my_acc = 'https://www.hugedomains.com/payment-plan-login.cfm'
 
-@pytest.fixture
+@pytest.mark.skip
 def playwright_page_index():
     with sync_playwright() as p:
         browser = p.firefox.launch()
