@@ -13,6 +13,10 @@ class HomePage:
         self.input_search_home.fill(query)
         self.btn_search.click()
 
+    def only_click_on_search(self):
+        self.btn_search.click()
+
+
     def wait_locator(self):
         self.page.wait_for_load_state("load")
 
